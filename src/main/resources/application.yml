@@ -1,0 +1,27 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+
+  datasource:
+#    url: jdbc:mysql://db:3306/study
+    url: jdbc:mysql://localhost:3307/study
+    username: study
+    password: study
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    hikari:
+      initializationFailTimeout: 60000
+      connectionTimeout: 60000
+
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  sql:
+    init:
+      mode: always

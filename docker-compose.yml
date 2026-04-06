@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+
+#  app:
+#    build: .
+#    container_name: withstudy-app
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - db
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/study
+#      SPRING_DATASOURCE_USERNAME: study
+#      SPRING_DATASOURCE_PASSWORD: study
+
+  db:
+    image: mysql:8
+    container_name: withstudy-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: study
+      MYSQL_USER: study
+      MYSQL_PASSWORD: study
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+          - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
